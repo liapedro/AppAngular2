@@ -1,0 +1,8 @@
+
+<ul class="collection">
+	<li class="collection-item indigo white-text" [hidden]="repositories.length > 0">Cargando Repositorios...</li>
+	<li class="collection-item" *ngFor="let repo of repositories">
+		<h3>{{repo.name}}</h3>
+		<h3>{{repo.description}}</h3>
+	</li>
+</ul>
