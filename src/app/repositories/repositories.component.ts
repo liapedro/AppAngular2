@@ -12,6 +12,7 @@ export class RepositoriesComponent implements OnInit {
 	repositories : any = [];
 
 	repository : IRepository;
+	newRepository : IRepository = {name:"", description:""};
 
   	constructor() { }
 
@@ -26,11 +27,21 @@ export class RepositoriesComponent implements OnInit {
 	  			{name: "PHP Ecommerce", description: "Proyecto demo de php"},
 	  			{name: "Ruby code", description: "Proyecto demo de ruby"}
 	  		];
+
+	  		//Esta informacion se mostrara directamente en la caja de texto del formulario con el nombre "name"
+	  		//this.newRepository.name = "Hola desde la funcionalidad";
   		}, 2000);
   	}
 
   	setMainRepository(repository){
   		this.repository = repository;
+  	}
+  	addNewRepo(){
+  		//Agrega al inicio de la lista de los repositorios
+  		//unshift coloca el elemento al principio de un arreglo.
+  		this.repositories.unshift(this.newRepository);
+
+  		this.newRepository = {name:"", description:""};
   	}
 }
 
